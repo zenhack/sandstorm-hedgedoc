@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+set -exuo pipefail
+
+here="$(dirname $0)"
+
+. "$here/config.sh"
+
+cd "$here/../$(basename $repo_url)"
+
+git checkout "$base_revision"
+git am ../patches/*.patch

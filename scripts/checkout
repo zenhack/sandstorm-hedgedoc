@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+set -exuo pipefail
+
+here="$(dirname $0)"
+
+. "$here/config.sh"
+
+cd "$here/.."
+
+if [ ! -e $(basename $repo_url) ]; then
+	git clone "$repo_url"
+	cd $(basename $repo_url)
+	git checkout "$base_revision"
+fi

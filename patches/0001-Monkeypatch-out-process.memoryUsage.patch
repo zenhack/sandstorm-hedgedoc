@@ -1,0 +1,31 @@
+From e98a7d6538a2acb66fd2d2d7d6447c26bb729075 Mon Sep 17 00:00:00 2001
+From: Ian Denhardt <ian@zenhack.net>
+Date: Wed, 6 Oct 2021 19:09:36 -0400
+Subject: [PATCH] Monkeypatch out process.memoryUsage().
+
+See comment. Otherwise this causes a crash on startup.
+---
+ app.js | 9 +++++++++
+ 1 file changed, 9 insertions(+)
+
+diff --git a/app.js b/app.js
+index 878c8572..aa4717cd 100644
+--- a/app.js
++++ b/app.js
+@@ -1,4 +1,13 @@
+ 'use strict'
++
++// `process.memoryUsage()` gets called by some dependencies, and
++// it throws if `/proc/self/stat` is unavailable -- so monkey patch
++// it:
++process.memoryUsage = () => {
++  // TODO: should we put some fake numbers in here:
++  return {};
++}
++
+ // app
+ // external modules
+ const express = require('express')
+-- 
+2.33.0
+
