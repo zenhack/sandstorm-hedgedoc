@@ -4,6 +4,7 @@
       "dialect": "sqlite",
       "storage": "/var/hedgedoc.db"
     },
-    "tooBusyLag": 700
+    "tooBusyLag": 700,
+    "email": false
   }
 }
