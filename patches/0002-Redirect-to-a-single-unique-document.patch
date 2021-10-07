@@ -1,7 +1,7 @@
 From 749ef3191ec9cc471cb1de2af58dc2bd3753bb68 Mon Sep 17 00:00:00 2001
 From: Ian Denhardt <ian@zenhack.net>
 Date: Wed, 6 Oct 2021 20:41:44 -0400
-Subject: [PATCH 2/2] Redirect / to a single unique document.
+Subject: [PATCH 2/3] Redirect / to a single unique document.
 
 ---
  lib/response.js | 14 ++++++++++++++
