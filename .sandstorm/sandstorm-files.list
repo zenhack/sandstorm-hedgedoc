@@ -1698,6 +1698,7 @@ opt/app/hedgedoc/public/views/build/cover-pack-header.ejs
 opt/app/hedgedoc/public/views/build/cover-pack-scripts.ejs
 opt/app/hedgedoc/public/views/build/index-pack-header.ejs
 opt/app/hedgedoc/public/views/build/index-pack-scripts.ejs
+opt/app/hedgedoc/public/views/error.ejs
 opt/app/hedgedoc/public/views/hedgedoc.ejs
 opt/app/hedgedoc/public/views/hedgedoc/body.ejs
 opt/app/hedgedoc/public/views/hedgedoc/footer.ejs

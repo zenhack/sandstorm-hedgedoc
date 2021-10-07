@@ -1,0 +1,37 @@
+From 749ef3191ec9cc471cb1de2af58dc2bd3753bb68 Mon Sep 17 00:00:00 2001
+From: Ian Denhardt <ian@zenhack.net>
+Date: Wed, 6 Oct 2021 20:41:44 -0400
+Subject: [PATCH 2/2] Redirect / to a single unique document.
+
+---
+ lib/response.js | 14 ++++++++++++++
+ 1 file changed, 14 insertions(+)
+
+diff --git a/lib/response.js b/lib/response.js
+index 4d22d563..6612f9a0 100644
+--- a/lib/response.js
++++ b/lib/response.js
+@@ -19,6 +19,20 @@ const response = {
+ }
+ 
+ function showIndex (req, res, next) {
++  // Sandstorm edit: redirect to a single note. Create a new
++  // one if one does not already exist.
++  models.Note.findOne({}).then((note) => {
++    let loc = '/new';
++    if(note) {
++      console.log(note)
++      loc = note.dataValues.shortid;
++    }
++    console.log("Location: ", loc);
++    res.writeHead(301, {'Location': loc})
++    res.end();
++  });
++  return;
++
+   const authStatus = req.isAuthenticated()
+   const deleteToken = ''
+ 
+-- 
+2.33.0
+
