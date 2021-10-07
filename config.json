@@ -3,6 +3,7 @@
     "db": {
       "dialect": "sqlite",
       "storage": "/var/hedgedoc.db"
-    }
+    },
+    "tooBusyLag": 700
   }
 }
