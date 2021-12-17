@@ -1683,6 +1683,7 @@ opt/app/hedgedoc/public/build/MathJax/jax/output/PreviewHTML/config.js
 opt/app/hedgedoc/public/build/MathJax/jax/output/PreviewHTML/jax.js
 opt/app/hedgedoc/public/build/ca68ab2400d619c59ce0eb255d39c6ba.woff
 opt/app/hedgedoc/public/build/common.1c773fb6375f6e4c11cf.js
+opt/app/hedgedoc/public/build/cover-pack.6949e7060a7c04a76325.js
 opt/app/hedgedoc/public/build/cover-styles-pack.b648f312ee4d780e4818.css
 opt/app/hedgedoc/public/build/cover-styles-pack.b648f312ee4d780e4818.css.map
 opt/app/hedgedoc/public/build/cover.e6dcfddabfc3aa3af727.css
@@ -1728,6 +1729,7 @@ opt/app/hedgedoc/public/build/slide-styles.f28b3cbe43b1ce05a8b8.css
 opt/app/hedgedoc/public/build/slide.3a42b21a3dd6674f6952.css
 opt/app/hedgedoc/public/build/vendors~common.5e1034cb4e0fcfb8b567.js
 opt/app/hedgedoc/public/build/vendors~common.5e1034cb4e0fcfb8b567.js.map
+opt/app/hedgedoc/public/build/vendors~cover~cover-pack.e5798975b79bb2448f60.js
 opt/app/hedgedoc/public/build/vendors~cover~cover-pack~index~index-pack~pretty~pretty-pack~slide~slide-pack.3d360016c6ae606e8f1f.js
 opt/app/hedgedoc/public/build/vendors~index~index-pack~pretty~pretty-pack~slide~slide-pack.2209cda3054f9512951d.js
 opt/app/hedgedoc/public/css/slide.css
