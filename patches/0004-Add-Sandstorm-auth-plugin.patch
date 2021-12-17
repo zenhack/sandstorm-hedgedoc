@@ -1,4 +1,4 @@
-From a6c373b3c9f8f0ef457919da2d0b0330d8386fc8 Mon Sep 17 00:00:00 2001
+From 47249a511921cb2d3a010336e768e93ecd31e7b8 Mon Sep 17 00:00:00 2001
 From: Vagrant SPK User <vagrant-spk@localhost>
 Date: Thu, 16 Dec 2021 23:38:24 -0500
 Subject: [PATCH 4/4] Add Sandstorm auth plugin
@@ -42,7 +42,7 @@ index 86ab4b28..56dbe02f 100644
    if (config.debug && req.isAuthenticated()) {
 diff --git a/lib/web/auth/sandstorm/index.js b/lib/web/auth/sandstorm/index.js
 new file mode 100644
-index 00000000..2d4895f8
+index 00000000..d92fbb9e
 --- /dev/null
 +++ b/lib/web/auth/sandstorm/index.js
 @@ -0,0 +1,133 @@
@@ -51,10 +51,10 @@ index 00000000..2d4895f8
 +const Router = require('express').Router
 +const passport = require('passport')
 +const CustomStrategy = require('passport-custom')
-+const config = require('../../config')
-+const models = require('../../models')
-+const logger = require('../../logger')
-+const response = require('../../response')
++const config = require('../../../config')
++const models = require('../../../models')
++const logger = require('../../../logger')
++const response = require('../../../response')
 +const { setReturnToFromReferer } = require('../utils')
 +const sandstormAuth = (module.exports = Router())
 +
