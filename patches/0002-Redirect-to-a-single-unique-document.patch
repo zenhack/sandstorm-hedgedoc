@@ -1,14 +1,14 @@
-From 749ef3191ec9cc471cb1de2af58dc2bd3753bb68 Mon Sep 17 00:00:00 2001
+From b13b28bb0c20bdffa3ac45a14568d8f90cbdeeff Mon Sep 17 00:00:00 2001
 From: Ian Denhardt <ian@zenhack.net>
 Date: Wed, 6 Oct 2021 20:41:44 -0400
-Subject: [PATCH 2/3] Redirect / to a single unique document.
+Subject: [PATCH 2/4] Redirect / to a single unique document.
 
 ---
  lib/response.js | 14 ++++++++++++++
  1 file changed, 14 insertions(+)
 
 diff --git a/lib/response.js b/lib/response.js
-index 4d22d563..6612f9a0 100644
+index 44696a55..d0fa2ce1 100644
 --- a/lib/response.js
 +++ b/lib/response.js
 @@ -19,6 +19,20 @@ const response = {
@@ -33,5 +33,5 @@ index 4d22d563..6612f9a0 100644
    const deleteToken = ''
  
 -- 
-2.33.0
+2.33.1
 

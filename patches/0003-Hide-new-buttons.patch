@@ -1,7 +1,7 @@
-From a49a551fded6f9e2cbf55d72f1cfd13856b1cba5 Mon Sep 17 00:00:00 2001
+From 6d6f7f027c6ae6e34d10b6a5ce44e51ef67cdd32 Mon Sep 17 00:00:00 2001
 From: Ian Denhardt <ian@zenhack.net>
 Date: Wed, 6 Oct 2021 21:41:32 -0400
-Subject: [PATCH 3/3] Hide 'new' buttons.
+Subject: [PATCH 3/4] Hide 'new' buttons.
 
 ...since we intend this to be used in single-doc mode; this could cause
 confusion.
@@ -39,5 +39,5 @@ index ecf96e42..1020f901 100644
                  <a href="#" target="_blank" rel="noopener" class="ui-publish">
                      <i class="fa fa-share-square-o"></i> <%= __('Publish') %>
 -- 
-2.33.0
+2.33.1
 
