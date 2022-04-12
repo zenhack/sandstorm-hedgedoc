@@ -1,3 +1,3 @@
 
 repo_url='https://github.com/hedgedoc/hedgedoc'
-base_revision='1.9.2'
+base_revision='1.9.3'
