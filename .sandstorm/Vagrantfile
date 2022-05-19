@@ -76,11 +76,11 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   if cpus.nil? or cpus.zero?
     cpus = 1
   end
-  if total_kB_ram.nil? or total_kB_ram < 2048000
-    assign_ram_mb = 512
-  else
-    assign_ram_mb = (total_kB_ram / 1024 / 4)
-  end
+
+  # The default Vagrantfile shipped with vagrant-spk tries to set this
+  # adaptively, but I(zenhack) have seen OOM errors when this is set to
+  # a reasonable number:
+  assign_ram_mb = 1024 * 3
   # Actually apply these CPU/memory values to the providers.
   config.vm.provider :virtualbox do |vb, override|
     vb.cpus = cpus

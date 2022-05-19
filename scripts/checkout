@@ -10,6 +10,7 @@ cd "$here/.."
 
 if [ ! -e $(basename $repo_url) ]; then
 	git clone "$repo_url"
-	cd $(basename $repo_url)
-	git checkout "$base_revision"
 fi
+cd $(basename $repo_url)
+git fetch
+git checkout "$base_revision"
