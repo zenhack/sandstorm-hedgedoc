@@ -147,7 +147,10 @@ const pkgdef :Spk.PackageDefinition = (
         # You probably don't want the app pulling files from these places,
         # so we hide them. Note that /dev, /var, and /tmp are implicitly
         # hidden because Sandstorm itself provides them.
-      )
+      ),
+      ( sourcePath = "/opt/app/auth-plugin",
+        packagePath = "opt/app/hedgedoc/lib/web/auth/sandstorm",
+      ),
     ]
   ),
 
