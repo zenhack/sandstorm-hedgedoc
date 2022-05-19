@@ -1,7 +1,7 @@
-From 47249a511921cb2d3a010336e768e93ecd31e7b8 Mon Sep 17 00:00:00 2001
-From: Vagrant SPK User <vagrant-spk@localhost>
-Date: Thu, 16 Dec 2021 23:38:24 -0500
-Subject: [PATCH 4/4] Add Sandstorm auth plugin
+From ce56ce9daf5386f476e774117fe7e65b2d1ac623 Mon Sep 17 00:00:00 2001
+From: Ian Denhardt <ian@zenhack.net>
+Date: Thu, 19 May 2022 01:13:08 -0400
+Subject: [PATCH 4/4] Add Sandstorm auth plugin.
 
 Imported from https://github.com/PDIS/codimd-sandstorm
 ---
@@ -9,11 +9,12 @@ Imported from https://github.com/PDIS/codimd-sandstorm
  lib/web/auth/index.js           |   3 +
  lib/web/auth/sandstorm/index.js | 133 ++++++++++++++++++++++++++++++++
  package.json                    |   1 +
- 4 files changed, 140 insertions(+)
+ yarn.lock                       |   7 ++
+ 5 files changed, 147 insertions(+)
  create mode 100644 lib/web/auth/sandstorm/index.js
 
 diff --git a/lib/models/user.js b/lib/models/user.js
-index d7953003..12bae6db 100644
+index 5532e5b3..b9149e85 100644
 --- a/lib/models/user.js
 +++ b/lib/models/user.js
 @@ -132,6 +132,9 @@ module.exports = function (sequelize, DataTypes) {
@@ -24,8 +25,8 @@ index d7953003..12bae6db 100644
 +        photo = profile.photo
 +        break
        default:
-         photo = generateAvatarURL(profile.username)
-         break
+         if (profile.emails && profile.emails.length > 0) {
+           photo = generateAvatarURL(profile.username, profile.emails[0])
 diff --git a/lib/web/auth/index.js b/lib/web/auth/index.js
 index 86ab4b28..56dbe02f 100644
 --- a/lib/web/auth/index.js
@@ -180,7 +181,7 @@ index 00000000..d92fbb9e
 +  }
 +})
 diff --git a/package.json b/package.json
-index 8d224331..597a3575 100644
+index f3099f89..afcd3963 100644
 --- a/package.json
 +++ b/package.json
 @@ -71,6 +71,7 @@
@@ -191,6 +192,24 @@ index 8d224331..597a3575 100644
      "passport-dropbox-oauth2": "^1.1.0",
      "passport-facebook": "^3.0.0",
      "passport-github": "^1.1.0",
+diff --git a/yarn.lock b/yarn.lock
+index f454136c..f45544bb 100644
+--- a/yarn.lock
++++ b/yarn.lock
+@@ -7881,6 +7881,13 @@ pascalcase@^0.1.1:
+   resolved "https://registry.yarnpkg.com/pascalcase/-/pascalcase-0.1.1.tgz#b363e55e8006ca6fe21784d2db22bd15d7917f14"
+   integrity sha1-s2PlXoAGym/iF4TS2yK9FdeRfxQ=
+ 
++passport-custom@^1.1.1:
++  version "1.1.1"
++  resolved "https://registry.yarnpkg.com/passport-custom/-/passport-custom-1.1.1.tgz#71db3d7ec1d7d0085e8768507f61b26d88051c0a"
++  integrity sha512-/2m7jUGxmCYvoqenLB9UrmkCgPt64h8ZtV+UtuQklZ/Tn1NpKBeOorCYkB/8lMRoiZ5hUrCoMmDtxCS/d38mlg==
++  dependencies:
++    passport-strategy "1.x.x"
++
+ passport-dropbox-oauth2@^1.1.0:
+   version "1.1.0"
+   resolved "https://registry.yarnpkg.com/passport-dropbox-oauth2/-/passport-dropbox-oauth2-1.1.0.tgz#77c737636e4841944dfb82dfc42c3d8ab782c10e"
 -- 
-2.33.1
+2.36.1
 

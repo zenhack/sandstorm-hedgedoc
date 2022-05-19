@@ -74,7 +74,6 @@ opt/app/hedgedoc/lib/response.js
 opt/app/hedgedoc/lib/utils.js
 opt/app/hedgedoc/lib/web/auth/email/index.js
 opt/app/hedgedoc/lib/web/auth/index.js
-opt/app/hedgedoc/lib/web/auth/sandstorm/index.js
 opt/app/hedgedoc/lib/web/auth/utils.js
 opt/app/hedgedoc/lib/web/baseRouter.js
 opt/app/hedgedoc/lib/web/historyRouter.js
@@ -957,9 +956,6 @@ opt/app/hedgedoc/node_modules/os-tmpdir/index.js
 opt/app/hedgedoc/node_modules/os-tmpdir/package.json
 opt/app/hedgedoc/node_modules/parseurl/index.js
 opt/app/hedgedoc/node_modules/parseurl/package.json
-opt/app/hedgedoc/node_modules/passport-custom/lib/index.js
-opt/app/hedgedoc/node_modules/passport-custom/lib/strategy.js
-opt/app/hedgedoc/node_modules/passport-custom/package.json
 opt/app/hedgedoc/node_modules/passport-local/lib/index.js
 opt/app/hedgedoc/node_modules/passport-local/lib/strategy.js
 opt/app/hedgedoc/node_modules/passport-local/lib/utils.js

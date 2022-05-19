@@ -1,4 +1,4 @@
-From 6d6f7f027c6ae6e34d10b6a5ce44e51ef67cdd32 Mon Sep 17 00:00:00 2001
+From 77204f4595de3a720e88444ba5abb5012eeae80c Mon Sep 17 00:00:00 2001
 From: Ian Denhardt <ian@zenhack.net>
 Date: Wed, 6 Oct 2021 21:41:32 -0400
 Subject: [PATCH 3/4] Hide 'new' buttons.
@@ -10,7 +10,7 @@ confusion.
  1 file changed, 4 insertions(+)
 
 diff --git a/public/views/hedgedoc/header.ejs b/public/views/hedgedoc/header.ejs
-index ecf96e42..1020f901 100644
+index 598c1401..2868e653 100644
 --- a/public/views/hedgedoc/header.ejs
 +++ b/public/views/hedgedoc/header.ejs
 @@ -22,8 +22,10 @@
@@ -39,5 +39,5 @@ index ecf96e42..1020f901 100644
                  <a href="#" target="_blank" rel="noopener" class="ui-publish">
                      <i class="fa fa-share-square-o"></i> <%= __('Publish') %>
 -- 
-2.33.1
+2.36.1
 
