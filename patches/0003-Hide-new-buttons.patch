@@ -1,4 +1,4 @@
-From 77204f4595de3a720e88444ba5abb5012eeae80c Mon Sep 17 00:00:00 2001
+From 7db98fd499b3635d12a08a434542cb61fce2a259 Mon Sep 17 00:00:00 2001
 From: Ian Denhardt <ian@zenhack.net>
 Date: Wed, 6 Oct 2021 21:41:32 -0400
 Subject: [PATCH 3/4] Hide 'new' buttons.
@@ -39,5 +39,5 @@ index 598c1401..2868e653 100644
                  <a href="#" target="_blank" rel="noopener" class="ui-publish">
                      <i class="fa fa-share-square-o"></i> <%= __('Publish') %>
 -- 
-2.36.1
+2.37.1
 

@@ -1,19 +1,21 @@
-From 1b453e7df28b50d957215f941a0ca9ca09b0c1b1 Mon Sep 17 00:00:00 2001
+From a4bf9a77da4e92023fd7028b1d454f123b8d3ece Mon Sep 17 00:00:00 2001
 From: Ian Denhardt <ian@zenhack.net>
 Date: Thu, 19 May 2022 01:13:08 -0400
 Subject: [PATCH 4/4] Add Sandstorm auth plugin.
 
-Imported from https://github.com/PDIS/codimd-sandstorm
+Originally based on the auth plugin from
+https://github.com/PDIS/codimd-sandstorm
 
 The plugin proper is in the sandstorm-hedgedoc repo, and we mount it
 into the hedgedoc directory via sourceMap. This patch just integrates it
 with other files.
 ---
- lib/models/user.js    | 3 +++
- lib/web/auth/index.js | 3 +++
- package.json          | 1 +
- yarn.lock             | 7 +++++++
- 4 files changed, 14 insertions(+)
+ lib/models/user.js    |  3 +++
+ lib/response.js       | 16 +++++++++++++---
+ lib/web/auth/index.js |  3 +++
+ package.json          |  1 +
+ yarn.lock             |  7 +++++++
+ 5 files changed, 27 insertions(+), 3 deletions(-)
 
 diff --git a/lib/models/user.js b/lib/models/user.js
 index 5532e5b3..b9149e85 100644
@@ -29,6 +31,40 @@ index 5532e5b3..b9149e85 100644
        default:
          if (profile.emails && profile.emails.length > 0) {
            photo = generateAvatarURL(profile.username, profile.emails[0])
+diff --git a/lib/response.js b/lib/response.js
+index c3e8da2b..540ab54c 100644
+--- a/lib/response.js
++++ b/lib/response.js
+@@ -19,6 +19,19 @@ const response = {
+ }
+ 
+ function showIndex (req, res, next) {
++  const authStatus = req.isAuthenticated()
++  const deleteToken = ''
++
++  console.log({
++    authStatus,
++    header: req.headers,
++  })
++
++  if(!authStatus && req.headers['x-sandstorm-user-id']) {
++    res.redirect(config.serverURL + '/auth/sandstorm');
++    return;
++  }
++
+   // Sandstorm edit: redirect to a single note. Create a new
+   // one if one does not already exist.
+   models.Note.findOne({}).then((note) => {
+@@ -33,9 +46,6 @@ function showIndex (req, res, next) {
+   });
+   return;
+ 
+-  const authStatus = req.isAuthenticated()
+-  const deleteToken = ''
+-
+   const data = {
+     signin: authStatus,
+     infoMessage: req.flash('info'),
 diff --git a/lib/web/auth/index.js b/lib/web/auth/index.js
 index 86ab4b28..56dbe02f 100644
 --- a/lib/web/auth/index.js
@@ -74,5 +110,5 @@ index f454136c..f45544bb 100644
    version "1.1.0"
    resolved "https://registry.yarnpkg.com/passport-dropbox-oauth2/-/passport-dropbox-oauth2-1.1.0.tgz#77c737636e4841944dfb82dfc42c3d8ab782c10e"
 -- 
-2.36.1
+2.37.1
 

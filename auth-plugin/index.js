@@ -7,7 +7,6 @@ const config = require('../../../config')
 const models = require('../../../models')
 const logger = require('../../../logger')
 const response = require('../../../response')
-const { setReturnToFromReferer } = require('../utils')
 const sandstormAuth = (module.exports = Router())
 
 // env
@@ -114,7 +113,6 @@ sandstormAuth.get('/auth/sandstorm', function (req, res, next) {
     return Object.assign(target, carry)
   }, {})
 
-  setReturnToFromReferer(req)
   if (header['x-sandstorm-user-id']) {
     passport.authenticate('sandstorm-header', {
       successReturnToOrRedirect: '/',

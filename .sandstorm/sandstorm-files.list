@@ -74,6 +74,7 @@ opt/app/hedgedoc/lib/response.js
 opt/app/hedgedoc/lib/utils.js
 opt/app/hedgedoc/lib/web/auth/email/index.js
 opt/app/hedgedoc/lib/web/auth/index.js
+opt/app/hedgedoc/lib/web/auth/sandstorm/index.js
 opt/app/hedgedoc/lib/web/auth/utils.js
 opt/app/hedgedoc/lib/web/baseRouter.js
 opt/app/hedgedoc/lib/web/historyRouter.js
@@ -956,6 +957,9 @@ opt/app/hedgedoc/node_modules/os-tmpdir/index.js
 opt/app/hedgedoc/node_modules/os-tmpdir/package.json
 opt/app/hedgedoc/node_modules/parseurl/index.js
 opt/app/hedgedoc/node_modules/parseurl/package.json
+opt/app/hedgedoc/node_modules/passport-custom/lib/index.js
+opt/app/hedgedoc/node_modules/passport-custom/lib/strategy.js
+opt/app/hedgedoc/node_modules/passport-custom/package.json
 opt/app/hedgedoc/node_modules/passport-local/lib/index.js
 opt/app/hedgedoc/node_modules/passport-local/lib/strategy.js
 opt/app/hedgedoc/node_modules/passport-local/lib/utils.js
@@ -1584,8 +1588,6 @@ opt/app/hedgedoc/public/build/MathJax/jax/output/PreviewHTML/config.js
 opt/app/hedgedoc/public/build/MathJax/jax/output/PreviewHTML/jax.js
 opt/app/hedgedoc/public/build/ca68ab2400d619c59ce0eb255d39c6ba.woff
 opt/app/hedgedoc/public/build/common.04e0fea40de4509528e6.js
-opt/app/hedgedoc/public/build/common.1c773fb6375f6e4c11cf.js
-opt/app/hedgedoc/public/build/cover-pack.6949e7060a7c04a76325.js
 opt/app/hedgedoc/public/build/cover-styles-pack.b648f312ee4d780e4818.css
 opt/app/hedgedoc/public/build/cover-styles-pack.b648f312ee4d780e4818.css.map
 opt/app/hedgedoc/public/build/cover.e6dcfddabfc3aa3af727.css
@@ -1608,13 +1610,11 @@ opt/app/hedgedoc/public/build/fonts/HTML-CSS/TeX/woff/MathJax_Math-Italic.woff
 opt/app/hedgedoc/public/build/fonts/HTML-CSS/TeX/woff/MathJax_Size1-Regular.woff
 opt/app/hedgedoc/public/build/fonts/HTML-CSS/TeX/woff/MathJax_Size2-Regular.woff
 opt/app/hedgedoc/public/build/fonts/HTML-CSS/TeX/woff/MathJax_Size4-Regular.woff
-opt/app/hedgedoc/public/build/index-pack.66a9fd2d02e912e3097e.js
 opt/app/hedgedoc/public/build/index-pack.c9a90a0d27bb33a01876.js
 opt/app/hedgedoc/public/build/index-styles-pack.f8ae33429b581d4e1171.css
 opt/app/hedgedoc/public/build/index-styles-pack.f8ae33429b581d4e1171.css.map
 opt/app/hedgedoc/public/build/index-styles.69f33f427763810ebdcf.css
 opt/app/hedgedoc/public/build/index-styles.69f33f427763810ebdcf.css.map
-opt/app/hedgedoc/public/build/index.30cd5870c5e6e0a5d577.css
 opt/app/hedgedoc/public/build/index.d22d802e5e88a36eefc1.css
 opt/app/hedgedoc/public/build/pretty-styles-pack.6437be263d7329017dfe.css
 opt/app/hedgedoc/public/build/pretty-styles-pack.6437be263d7329017dfe.css.map
@@ -1631,13 +1631,8 @@ opt/app/hedgedoc/public/build/reveal.js/lib/font/source-sans-pro/source-sans-pro
 opt/app/hedgedoc/public/build/reveal.js/plugin/notes/notes.js
 opt/app/hedgedoc/public/build/slide-styles.f28b3cbe43b1ce05a8b8.css
 opt/app/hedgedoc/public/build/slide.3a42b21a3dd6674f6952.css
-opt/app/hedgedoc/public/build/vendors~common.5e1034cb4e0fcfb8b567.js
-opt/app/hedgedoc/public/build/vendors~common.5e1034cb4e0fcfb8b567.js.map
 opt/app/hedgedoc/public/build/vendors~common.9f564b46f420cdda1117.js
-opt/app/hedgedoc/public/build/vendors~cover~cover-pack.e5798975b79bb2448f60.js
 opt/app/hedgedoc/public/build/vendors~cover~cover-pack~index~index-pack~pretty~pretty-pack~slide~slide-pack.193d3c6702f23213ab74.js
-opt/app/hedgedoc/public/build/vendors~cover~cover-pack~index~index-pack~pretty~pretty-pack~slide~slide-pack.3d360016c6ae606e8f1f.js
-opt/app/hedgedoc/public/build/vendors~index~index-pack~pretty~pretty-pack~slide~slide-pack.2209cda3054f9512951d.js
 opt/app/hedgedoc/public/build/vendors~index~index-pack~pretty~pretty-pack~slide~slide-pack.4b618d4509e3f267eadc.js
 opt/app/hedgedoc/public/css/slide.css
 opt/app/hedgedoc/public/default.md
