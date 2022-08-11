@@ -1,4 +1,4 @@
-From c428218ed6a272fd816782257f4913b1581b3f24 Mon Sep 17 00:00:00 2001
+From 27b499d8a9c12f6d183853e0c3c56d38ed0c3f15 Mon Sep 17 00:00:00 2001
 From: Ian Denhardt <ian@zenhack.net>
 Date: Thu, 19 May 2022 01:13:08 -0400
 Subject: [PATCH 4/4] Add Sandstorm auth plugin.
@@ -32,14 +32,14 @@ index 5532e5b3..b9149e85 100644
          if (profile.emails && profile.emails.length > 0) {
            photo = generateAvatarURL(profile.username, profile.emails[0])
 diff --git a/lib/response.js b/lib/response.js
-index 7c452581..637806d3 100644
+index 7c452581..6ad6e799 100644
 --- a/lib/response.js
 +++ b/lib/response.js
 @@ -22,6 +22,11 @@ function showIndex (req, res, next) {
    const authStatus = req.isAuthenticated()
    const deleteToken = ''
  
-+  if(!authStatus && req.headers['x-sandstorm-user-id']) {
++  if(!authStatus) {
 +    res.redirect(config.serverURL + '/auth/sandstorm');
 +    return;
 +  }
