@@ -1,4 +1,4 @@
-From a4bf9a77da4e92023fd7028b1d454f123b8d3ece Mon Sep 17 00:00:00 2001
+From c428218ed6a272fd816782257f4913b1581b3f24 Mon Sep 17 00:00:00 2001
 From: Ian Denhardt <ian@zenhack.net>
 Date: Thu, 19 May 2022 01:13:08 -0400
 Subject: [PATCH 4/4] Add Sandstorm auth plugin.
@@ -10,12 +10,12 @@ The plugin proper is in the sandstorm-hedgedoc repo, and we mount it
 into the hedgedoc directory via sourceMap. This patch just integrates it
 with other files.
 ---
- lib/models/user.js    |  3 +++
- lib/response.js       | 16 +++++++++++++---
- lib/web/auth/index.js |  3 +++
- package.json          |  1 +
- yarn.lock             |  7 +++++++
- 5 files changed, 27 insertions(+), 3 deletions(-)
+ lib/models/user.js    | 3 +++
+ lib/response.js       | 5 +++++
+ lib/web/auth/index.js | 3 +++
+ package.json          | 1 +
+ yarn.lock             | 7 +++++++
+ 5 files changed, 19 insertions(+)
 
 diff --git a/lib/models/user.js b/lib/models/user.js
 index 5532e5b3..b9149e85 100644
@@ -32,21 +32,13 @@ index 5532e5b3..b9149e85 100644
          if (profile.emails && profile.emails.length > 0) {
            photo = generateAvatarURL(profile.username, profile.emails[0])
 diff --git a/lib/response.js b/lib/response.js
-index c3e8da2b..540ab54c 100644
+index 7c452581..637806d3 100644
 --- a/lib/response.js
 +++ b/lib/response.js
-@@ -19,6 +19,19 @@ const response = {
- }
+@@ -22,6 +22,11 @@ function showIndex (req, res, next) {
+   const authStatus = req.isAuthenticated()
+   const deleteToken = ''
  
- function showIndex (req, res, next) {
-+  const authStatus = req.isAuthenticated()
-+  const deleteToken = ''
-+
-+  console.log({
-+    authStatus,
-+    header: req.headers,
-+  })
-+
 +  if(!authStatus && req.headers['x-sandstorm-user-id']) {
 +    res.redirect(config.serverURL + '/auth/sandstorm');
 +    return;
@@ -55,16 +47,6 @@ index c3e8da2b..540ab54c 100644
    // Sandstorm edit: redirect to a single note. Create a new
    // one if one does not already exist.
    models.Note.findOne({}).then((note) => {
-@@ -33,9 +46,6 @@ function showIndex (req, res, next) {
-   });
-   return;
- 
--  const authStatus = req.isAuthenticated()
--  const deleteToken = ''
--
-   const data = {
-     signin: authStatus,
-     infoMessage: req.flash('info'),
 diff --git a/lib/web/auth/index.js b/lib/web/auth/index.js
 index 86ab4b28..56dbe02f 100644
 --- a/lib/web/auth/index.js

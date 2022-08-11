@@ -1,4 +1,4 @@
-From 7db98fd499b3635d12a08a434542cb61fce2a259 Mon Sep 17 00:00:00 2001
+From 8956f884d261d57f6cd1335d198f3d3618807461 Mon Sep 17 00:00:00 2001
 From: Ian Denhardt <ian@zenhack.net>
 Date: Wed, 6 Oct 2021 21:41:32 -0400
 Subject: [PATCH 3/4] Hide 'new' buttons.
