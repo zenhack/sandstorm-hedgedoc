@@ -1,4 +1,4 @@
-From 27b499d8a9c12f6d183853e0c3c56d38ed0c3f15 Mon Sep 17 00:00:00 2001
+From fcacecaa83df794805481d61ac5eeb4d0490ec02 Mon Sep 17 00:00:00 2001
 From: Ian Denhardt <ian@zenhack.net>
 Date: Thu, 19 May 2022 01:13:08 -0400
 Subject: [PATCH 4/4] Add Sandstorm auth plugin.
@@ -32,7 +32,7 @@ index 5532e5b3..b9149e85 100644
          if (profile.emails && profile.emails.length > 0) {
            photo = generateAvatarURL(profile.username, profile.emails[0])
 diff --git a/lib/response.js b/lib/response.js
-index 7c452581..6ad6e799 100644
+index b0efa437..cfe52d56 100644
 --- a/lib/response.js
 +++ b/lib/response.js
 @@ -22,6 +22,11 @@ function showIndex (req, res, next) {
@@ -48,7 +48,7 @@ index 7c452581..6ad6e799 100644
    // one if one does not already exist.
    models.Note.findOne({}).then((note) => {
 diff --git a/lib/web/auth/index.js b/lib/web/auth/index.js
-index 86ab4b28..56dbe02f 100644
+index 40c59aed..fc1e8434 100644
 --- a/lib/web/auth/index.js
 +++ b/lib/web/auth/index.js
 @@ -47,6 +47,9 @@ if (config.isOAuth2Enable) authRouter.use(require('./oauth2'))
@@ -62,24 +62,24 @@ index 86ab4b28..56dbe02f 100644
  authRouter.get('/logout', function (req, res) {
    if (config.debug && req.isAuthenticated()) {
 diff --git a/package.json b/package.json
-index f3099f89..afcd3963 100644
+index fcf8c6d6..7e803793 100644
 --- a/package.json
 +++ b/package.json
 @@ -71,6 +71,7 @@
      "mysql2": "^2.0.0",
      "node-fetch": "^2.6.1",
-     "passport": "^0.5.0",
+     "passport": "^0.6.0",
 +    "passport-custom": "^1.1.1",
      "passport-dropbox-oauth2": "^1.1.0",
      "passport-facebook": "^3.0.0",
      "passport-github": "^1.1.0",
 diff --git a/yarn.lock b/yarn.lock
-index f454136c..f45544bb 100644
+index b3b8146b..a95f4d41 100644
 --- a/yarn.lock
 +++ b/yarn.lock
-@@ -7881,6 +7881,13 @@ pascalcase@^0.1.1:
+@@ -8002,6 +8002,13 @@ pascalcase@^0.1.1:
    resolved "https://registry.yarnpkg.com/pascalcase/-/pascalcase-0.1.1.tgz#b363e55e8006ca6fe21784d2db22bd15d7917f14"
-   integrity sha1-s2PlXoAGym/iF4TS2yK9FdeRfxQ=
+   integrity sha512-XHXfu/yOQRy9vYOtUDVMN60OEJjW013GoObG1o+xwQTpB9eYJX/BjXMsdW13ZDPruFhYYn0AG22w0xgQMwl3Nw==
  
 +passport-custom@^1.1.1:
 +  version "1.1.1"

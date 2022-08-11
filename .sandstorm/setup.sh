@@ -17,7 +17,7 @@ export DEBIAN_FRONTEND=noninteractive
 apt-get update
 apt-get install -qq apt-transport-https
 
-curl -sL https://deb.nodesource.com/setup_12.x | bash -
+curl -sL https://deb.nodesource.com/setup_16.x | bash -
 
 # Actually install node
 apt-get install -qq nodejs git-core g++
