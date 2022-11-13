@@ -1,3 +1,7 @@
+# 1.9.6
+
+Bump hedgedoc version.
+
 # 1.9.4-1
 
 Integrate a sandstorm auth plugin.
