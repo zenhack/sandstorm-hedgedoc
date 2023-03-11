@@ -1,3 +1,11 @@
+# 1.9.7-1
+
+Fix regression where the auth plugin patch failed to apply
+
+# 1.9.7
+
+Bump hedgedoc version
+
 # 1.9.6
 
 Bump hedgedoc version.
