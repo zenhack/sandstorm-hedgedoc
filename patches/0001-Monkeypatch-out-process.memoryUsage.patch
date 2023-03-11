@@ -1,4 +1,4 @@
-From a79878776f1d0ce4f7e934650daf501c357477c4 Mon Sep 17 00:00:00 2001
+From c55789e1c69f09c0646a37a4ac5b8f81b4ffd3ae Mon Sep 17 00:00:00 2001
 From: Ian Denhardt <ian@zenhack.net>
 Date: Wed, 6 Oct 2021 19:09:36 -0400
 Subject: [PATCH 1/4] Monkeypatch out process.memoryUsage().
@@ -9,7 +9,7 @@ See comment. Otherwise this causes a crash on startup.
  1 file changed, 9 insertions(+)
 
 diff --git a/app.js b/app.js
-index 34a107ae..41de45ab 100644
+index 34a107ae1..41de45ab8 100644
 --- a/app.js
 +++ b/app.js
 @@ -1,4 +1,13 @@
@@ -27,5 +27,5 @@ index 34a107ae..41de45ab 100644
  // external modules
  const express = require('express')
 -- 
-2.37.1
+2.39.2
 

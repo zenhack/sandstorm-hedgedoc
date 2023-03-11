@@ -1042,6 +1042,9 @@ opt/app/hedgedoc/node_modules/os-tmpdir/index.js
 opt/app/hedgedoc/node_modules/os-tmpdir/package.json
 opt/app/hedgedoc/node_modules/parseurl/index.js
 opt/app/hedgedoc/node_modules/parseurl/package.json
+opt/app/hedgedoc/node_modules/passport-custom/lib/index.js
+opt/app/hedgedoc/node_modules/passport-custom/lib/strategy.js
+opt/app/hedgedoc/node_modules/passport-custom/package.json
 opt/app/hedgedoc/node_modules/passport-local/lib/index.js
 opt/app/hedgedoc/node_modules/passport-local/lib/strategy.js
 opt/app/hedgedoc/node_modules/passport-local/lib/utils.js

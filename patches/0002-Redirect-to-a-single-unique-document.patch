@@ -1,4 +1,4 @@
-From 30cf23e7f5fc95aad5e46f675d820bdc7926eb8a Mon Sep 17 00:00:00 2001
+From 3b5ef79b57dd3d0fa45b74dad6a7d62d85c205ae Mon Sep 17 00:00:00 2001
 From: Ian Denhardt <ian@zenhack.net>
 Date: Wed, 6 Oct 2021 20:41:44 -0400
 Subject: [PATCH 2/4] Redirect / to a single unique document.
@@ -8,7 +8,7 @@ Subject: [PATCH 2/4] Redirect / to a single unique document.
  1 file changed, 14 insertions(+)
 
 diff --git a/lib/response.js b/lib/response.js
-index 853f80a4..b0efa437 100644
+index 853f80a4e..b0efa4377 100644
 --- a/lib/response.js
 +++ b/lib/response.js
 @@ -22,6 +22,20 @@ function showIndex (req, res, next) {
@@ -33,5 +33,5 @@ index 853f80a4..b0efa437 100644
      signin: authStatus,
      infoMessage: req.flash('info'),
 -- 
-2.37.1
+2.39.2
 
