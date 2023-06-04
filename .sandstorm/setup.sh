@@ -9,7 +9,7 @@ set -euo pipefail
 # Discussion, issues and change requests at:
 #   https://github.com/nodesource/distributions
 #
-# Script to install the NodeSource Node.js 10.x repo onto a
+# Script to install the NodeSource Node.js 16.x repo onto a
 # Debian or Ubuntu system.
 
 export DEBIAN_FRONTEND=noninteractive
