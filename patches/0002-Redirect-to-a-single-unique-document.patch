@@ -1,4 +1,4 @@
-From 3b5ef79b57dd3d0fa45b74dad6a7d62d85c205ae Mon Sep 17 00:00:00 2001
+From 3fb6c664ac84926aa9ee5a325477c11978084492 Mon Sep 17 00:00:00 2001
 From: Ian Denhardt <ian@zenhack.net>
 Date: Wed, 6 Oct 2021 20:41:44 -0400
 Subject: [PATCH 2/4] Redirect / to a single unique document.
@@ -33,5 +33,5 @@ index 853f80a4e..b0efa4377 100644
      signin: authStatus,
      infoMessage: req.flash('info'),
 -- 
-2.39.2
+2.40.1
 
